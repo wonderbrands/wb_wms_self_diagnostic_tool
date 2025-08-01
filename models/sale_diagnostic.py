@@ -3,7 +3,7 @@
 from odoo import models, fields, api
 import base64
 import io
-from PyPDF2 import PdfReader
+from PyPDF2 import PdfFileReader
 import logging
 
 _logger = logging.getLogger(__name__)
@@ -89,8 +89,8 @@ class WMSSaleChecker(models.Model):
                     try:
                         data = base64.b64decode(att.datas)
                         if att.mimetype == 'application/pdf':
-                            reader = PdfReader(io.BytesIO(data))
-                            total_pages += len(reader.pages)
+                            reader = PdfFileReader(io.BytesIO(data))
+                            total_pages += reader.getNumPages()
                         elif att.mimetype == 'text/plain':
                             total_pages += 1
                     except Exception as e:
