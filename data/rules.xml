@@ -1,0 +1,24 @@
+<odoo>
+    <data>
+        <record id="rule_5_minutes_3_days" model="oms.sync.sale.rules">
+            <field name="last_n_days">3</field>
+            <field name="each_n_minutes">5</field>
+            <field name="and_previous">False</field>
+        </record>
+        <record id="rule_20_minutes_7_days" model="oms.sync.sale.rules">
+            <field name="last_n_days">7</field>
+            <field name="each_n_minutes">20</field>
+            <field name="and_previous">False</field>
+        </record>
+        <record id="rule_3_hours_30_days" model="oms.sync.sale.rules">
+            <field name="last_n_days">30</field>
+            <field name="each_n_minutes">180</field>
+            <field name="and_previous">False</field>
+        </record>
+        <record id="rule_1_day_32_days" model="oms.sync.sale.rules">
+            <field name="last_n_days">32</field>
+            <field name="each_n_minutes">1440</field>
+            <field name="and_previous">True</field>
+        </record>
+    </data>
+</odoo>

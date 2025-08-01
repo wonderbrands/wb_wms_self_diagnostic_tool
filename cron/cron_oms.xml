@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+        <record id="ir_cron_oms_sync_sales" model="ir.cron">
+            <field name="name">OMS Sync Sales</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">5</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+            <field name="model_id" ref="model_oms_sale_controller"/>
+            <field name="function" eval="'cron_sync_sales'"/>
+            <field name="args">None</field>
+        </record>
+    </data>
+</odoo>
